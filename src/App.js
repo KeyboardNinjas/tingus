@@ -6,6 +6,7 @@ import {
   NavLink
 } from "react-router-dom";
 import clsx from 'clsx';
+// Material UI
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import AppBar from '@material-ui/core/AppBar';
@@ -22,6 +23,8 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
+// Pages
+import ManageTests from "./pages/ManageTests/manageTests.page";
 
 const drawerWidth = 240;
 
@@ -122,7 +125,7 @@ function App() {
               <MenuIcon />
             </IconButton>
             <Typography variant="h6" noWrap>
-              Home
+              Tingus
             </Typography>
           </Toolbar>
         </AppBar>
@@ -173,14 +176,14 @@ function App() {
         <main className={classes.content}>
           <div className={classes.toolbar} />
           <Switch>
-            <Route path="/about">
-              <About />
+            <Route path="/">
+              <ManageTests />
             </Route>
-            <Route path="/users">
+            <Route path="/run-tests">
               <Users />
             </Route>
-            <Route path="/">
-              <Home />
+            <Route path="/about">
+              <About />
             </Route>
           </Switch>
         </main>
